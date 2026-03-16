@@ -179,7 +179,7 @@ jobs:
           name: windows
           # 确保 path: | 下面的内容只缩进了一点点
           path: |
-            simple_live_app/build/dist/*/*.msix
-            simple_live_app/build/dist/*/*.zip
+           simple_live_app/build/dist/*/*.msix
+           simple_live_app/build/dist/*/*.zip
       - name: Check Status
-        run: echo "Windows build finished with status: ${{ job.status }}."
+        run: echo "Windows build finished with status: ${{ job.status }}"
