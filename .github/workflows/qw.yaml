@@ -118,8 +118,8 @@ jobs:
         run: |
           cd simple_live_app
           flutter_distributor package --platform macos --targets dmg,zip --skip-clean
-
-      # 上传MAC
+          
+      # 上传MAC至Artifacts
       - name: Upload MacOS to Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -127,8 +127,10 @@ jobs:
           path: |
             simple_live_app/build/dist/*/*.dmg
             simple_live_app/build/dist/*/*.zip
-      
-      - run: echo "🍏 Mac/iOS/Android job status: ${{ job.status }}."
+
+      # 🔥 必须加 name，且缩进要和上面的 "- name: Upload..." 完全一致
+      - name: Final Status Check
+        run: echo "🍏 This job's status is ${{ job.status }}."
 
   # 打包Linux
   build-linux:
