@@ -187,7 +187,7 @@ jobs:
 
       # 🔥 确保下一个步骤的 "- name" 或 "- run" 与上面的 "- name: Upload..." 对齐
       - name: Print Linux Status
-        run: echo "🐧 Linux job status: ${{ job.status }}."
+          run: echo "🐧 Linux job status: ${{ job.status }}."
 
       - run: echo "🐧 Linux job status: ${{ job.status }}."
 
