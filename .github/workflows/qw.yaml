@@ -182,4 +182,4 @@ jobs:
             simple_live_app/build/dist/*/*.msix
             simple_live_app/build/dist/*/*.zip
       - name: Check Status
-        run: echo "Windows build finished with status: ${{ job.status }}"
+        run: echo "Windows build finished with status: ${{ job.status }}."
