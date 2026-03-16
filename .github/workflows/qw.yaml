@@ -180,9 +180,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux
+          # 注意：path: | 下面的一行必须比 path 多缩进
           path: |
             simple_live_app/build/dist/*/*.deb
             simple_live_app/build/dist/*/*.zip
+
+      # 🔥 确保下一个步骤的 "- name" 或 "- run" 与上面的 "- name: Upload..." 对齐
+      - name: Print Linux Status
+        run: echo "🐧 Linux job status: ${{ job.status }}."
 
       - run: echo "🐧 Linux job status: ${{ job.status }}."
 
