@@ -181,4 +181,14 @@ jobs:
             simple_live_app/build/dist/*/*.msix
             simple_live_app/build/dist/*/*.zip
             
-      - run: echo "🪟 Windows job status: ${{ job.status }}."
+      - name: Upload Windows APP to Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: |
+            simple_live_app/build/dist/*/*.msix
+            simple_live_app/build/dist/*/*.zip
+
+      # 🔥 修复：添加 name，并确保 "-" 与上面的步骤严格对齐
+      - name: Print Windows Status
+        run: echo "🪟 Windows job status: ${{ job.status }}."
