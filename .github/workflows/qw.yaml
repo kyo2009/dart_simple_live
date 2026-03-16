@@ -177,10 +177,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows
+          # 确保 path: | 下面的内容只缩进了一点点
           path: |
             simple_live_app/build/dist/*/*.msix
             simple_live_app/build/dist/*/*.zip
-
-      # 🔥 修复：添加 name，并确保 "-" 与上面的步骤严格对齐
-      - name: Print Windows Status
-        run: echo "🪟 Windows job status: ${{ job.status }}."
+      - name: Check Status
+        run: echo "Windows build finished with status: ${{ job.status }}"
