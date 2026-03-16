@@ -172,14 +172,6 @@ jobs:
         run: |
           cd simple_live_app
           flutter_distributor package --platform windows --targets msix,zip --skip-clean
-      
-      - name: Upload Windows APP to Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows
-          path: |
-            simple_live_app/build/dist/*/*.msix
-            simple_live_app/build/dist/*/*.zip
             
       - name: Upload Windows APP to Artifacts
         uses: actions/upload-artifact@v4
